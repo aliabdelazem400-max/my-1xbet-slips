@@ -142,4 +142,23 @@
 
 <script>
     function showSlips() {
-        document.getElementById('slipsContainer
+        document.getElementById('slipsContainer').style.display = 'block';
+        window.scrollTo({ top: 400, behavior: 'smooth' });
+    }
+
+    function copyCode(element, code) {
+        navigator.clipboard.writeText(code);
+        const originalText = code;
+        element.innerText = "تم النسخ! ✅";
+        element.style.background = "#28a745";
+        element.style.color = "#fff";
+        setTimeout(() => {
+            element.innerText = originalText;
+            element.style.background = "#fff";
+            element.style.color = "#000";
+        }, 1500);
+    }
+</script>
+
+</body>
+</html>
