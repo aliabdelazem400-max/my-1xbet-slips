@@ -25,3 +25,127 @@
         .logo { width: 80px; height: 80px; background: var(--primary); border-radius: 15px; display: inline-block; line-height: 80px; font-size: 2em; font-weight: 900; color: #000; margin-bottom: 15px; box-shadow: 0 0 20px rgba(255,204,0,0.4); }
         
         .btn-main { background: var(--primary); color: #000; border: none; padding: 15px 30px; font-size: 1.1em; font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s; margin: 5px; }
+        
+        /* زر التلجرام العلوي */
+        .btn-telegram-top { background: var(--telegram); color: white; border: none; padding: 15px 30px; font-size: 1.1em; font-weight: bold; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; margin: 5px; }
+
+        /* زر التلجرام العائم */
+        .telegram-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--telegram);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .slips-section { display: none; width: 95%; max-width: 450px; margin: 30px 0; }
+
+        .slip-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-right: 5px solid var(--primary);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .amount-badge { background: rgba(255, 255, 255, 0.15); padding: 5px 15px; border-radius: 5px; font-size: 0.9em; font-weight: bold; display: inline-block; margin-bottom: 10px; color: #eee; }
+        .odds-value { float: left; font-size: 1.8em; font-weight: 900; color: var(--primary); }
+        .target-text { display: block; font-size: 1.3em; font-weight: bold; margin: 5px 0; color: #fff; }
+
+        .copy-box { background: #fff; color: #000; padding: 12px; margin-top: 15px; border-radius: 10px; text-align: center; font-weight: 800; font-size: 1.4em; letter-spacing: 4px; cursor: pointer; }
+        .hint { text-align: center; font-size: 0.75em; color: #777; margin-top: 5px; }
+
+    </style>
+</head>
+<body>
+
+<a href="https://t.me/xbetegyp11" class="telegram-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="35" alt="Telegram">
+</a>
+
+<header>
+    <div class="logo">1X</div>
+    <h1>أقوى قسائم اليوم 🔥</h1>
+    
+    <div style="margin-top: 20px;">
+        <button class="btn-main" onclick="showSlips()">عرض القسائم</button>
+        <a href="https://t.me/xbetegyp11" class="btn-telegram-top" target="_blank">قناة التلجرام ✈️</a>
+    </div>
+</header>
+
+<div class="slips-section" id="slipsContainer">
+    
+    <div class="slip-card">
+        <span class="odds-value">1.80 Odds</span>
+        <div class="amount-badge">فئة 100 ج.م</div>
+        <span class="target-text">قسيمة الأمان العالي ✅</span>
+        <div class="copy-box" onclick="copyCode(this, 'SAFE100')">SAFE100</div>
+        <p class="hint">اضغط للنسخ</p>
+    </div>
+
+    <div class="slip-card" style="border-right-color: #007bff;">
+        <span class="odds-value">2.40 Odds</span>
+        <div class="amount-badge">فئة 500 ج.م</div>
+        <span class="target-text">قسيمة الأرباح المتوسطة 💰</span>
+        <div class="copy-box" onclick="copyCode(this, 'PRO500')">PRO500</div>
+        <p class="hint">اضغط للنسخ</p>
+    </div>
+
+    <div class="slip-card" style="border-right-color: #28a745;">
+        <span class="odds-value">3.50 Odds</span>
+        <div class="amount-badge">فئة 1000 ج.م</div>
+        <span class="target-text">قسيمة المحترفين 🚀</span>
+        <div class="copy-box" onclick="copyCode(this, 'VIP1000')">VIP1000</div>
+        <p class="hint">اضغط للنسخ</p>
+    </div>
+
+    <div class="slip-card" style="border-right-color: #dc3545;">
+        <span class="odds-value">5.20 Odds</span>
+        <div class="amount-badge">فئة 5000 ج.م</div>
+        <span class="target-text">قسيمة المغامرة الكبرى 🔥</span>
+        <div class="copy-box" onclick="copyCode(this, 'GOLD5000')">GOLD5000</div>
+        <p class="hint">اضغط للنسخ</p>
+    </div>
+
+    <div class="slip-card" style="border-right-color: #ff00ff;">
+        <span class="odds-value">12.0 Odds</span>
+        <div class="amount-badge">فئة 10,000 ج.م</div>
+        <span class="target-text">قسيمة الجائزة الكبرى 💎</span>
+        <div class="copy-box" onclick="copyCode(this, 'JACKPOTX')">JACKPOTX</div>
+        <p class="hint">اضغط للنسخ</p>
+    </div>
+
+</div>
+
+<script>
+    function showSlips() {
+        document.getElementById('slipsContainer').style.display = 'block';
+        window.scrollTo({ top: 400, behavior: 'smooth' });
+    }
+
+    function copyCode(element, code) {
+        navigator.clipboard.writeText(code);
+        const originalText = code;
+        element.innerText = "تم النسخ! ✅";
+        element.style.background = "#28a745";
+        element.style.color = "#fff";
+        setTimeout(() => {
+            element.innerText = originalText;
+            element.style.background = "#fff";
+            element.style.color = "#000";
+        }, 1500);
+    }
+</script>
+
+</body>
+</html>
