@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسم موقعك - لموثق القسائم</title>
+    <style>
+        /* إعدادات الخلفية والشكل العام */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* هنا تقدر تغير رابط الخلفية */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* رأس الصفحة (اللوجو والاسم) */
+        header {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: #ffcc00;
+            border-radius: 50%;
+            display: inline-block;
+            line-height: 100px;
+            font-size: 2em;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+        }
+
+        h1 { margin: 0; font-size: 2.5em; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        p.subtitle { font-size: 1.1em; color: #ddd; }
+
+        /* الأزرار والقسائم */
+        .btn-main {
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 15px 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .btn-main:hover { transform: scale(1.1); background: #fff; }
+
+        .slips-section {
+            display: none; /* مخفي وهيظهر لما تضغط الزر */
+            width: 90%;
+            max-width: 500px;
+            margin-top: 30px;
+        }
+
+        .slip-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .slip-tag { background: #28a745; color: white; padding: 5px 12px; border-radius: 5px; font-size: 0.8em; }
+        .odds { float: left; color: #ffcc00; font-weight: bold; font-size: 1.2em; }
+        
+        .copy-box {
+            background: rgba(255,255,255,0.9);
+            color: #000;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.4em;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">1X</div> <h1>مـوقـع [اسـمـك هـنـا]</h1>
+    <p class="subtitle">أقوى قسائم 1xbet اليومية الموثوقة 100%</p>
+    <button class="btn-main" onclick="showSlips()">مشاهدة قسائم اليوم 🔥</button>
+</header>
+
+<div class="slips-section" id="slipsContainer">
+    
+    <div class="slip-card">
+        <span class="odds">3.50 Odds</span>
+        <span class="slip-tag">مباشر</span>
+        <h3>توقعات الدوري المصري</h3>
+        <p>الأهلي ضد الزمالك + مباراتين إضافيتين</p>
+        <div class="copy-box" onclick="copyCode('A1B2C')">A1B2C</div>
+        <p style="text-align:center; font-size: 0.8em; margin-top:5px;">اضغط على الكود للنسخ</p>
+    </div>
+
+    <div class="slip-card">
+        <span class="odds">1.90 Odds</span>
+        <span class="slip-tag">آمنة جداً</span>
+        <h3>توقعات الدوري الإنجليزي</h3>
+        <p>مباراة مانشستر سيتي - فوز مؤكد</p>
+        <div class="copy-box" onclick="copyCode('X99YZ')">X99YZ</div>
+    </div>
+
+</div>
+
+<script>
+    function showSlips() {
+        document.getElementById('slipsContainer').style.display = 'block';
+        window.scrollTo({ top: 500, behavior: 'smooth' });
+    }
+
+    function copyCode(code) {
+        navigator.clipboard.writeText(code);
+        alert("تم نسخ كود القسيمة بنجاح: " + code);
+    }
+</script>
+
+</body>
+</html>
